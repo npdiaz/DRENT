@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_125111) do
+ActiveRecord::Schema.define(version: 2019_03_04_145211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "rent_start_date"
+    t.datetime "rent_end_date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "drone_id"
+    t.index ["drone_id"], name: "index_bookings_on_drone_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "drones", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "brand"
+    t.string "model"
+    t.string "size"
+    t.string "weight"
+    t.string "endurance"
+    t.text "address"
+    t.string "city"
+    t.string "country"
+    t.integer "price"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_drones_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "drone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drone_id"], name: "index_photos_on_drone_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,4 +78,9 @@ ActiveRecord::Schema.define(version: 2019_03_04_125111) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "drones"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "drones", "users"
+  add_foreign_key "photos", "drones"
+  add_foreign_key "reviews", "bookings"
 end
