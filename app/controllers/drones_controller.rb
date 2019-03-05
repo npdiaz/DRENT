@@ -5,6 +5,7 @@ class DronesController < ApplicationController
 
   def show          # GET /drones/:id
     @drone = Drone.find(params[:id])
+    @booking = @drone.bookings.new
   end
 
   def new           # GET /drones/new

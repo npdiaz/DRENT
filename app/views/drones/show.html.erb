@@ -1,6 +1,23 @@
-<h2><%= @drone.title %></h2>
+<h1> Welcome to the profile of <%= @drone.title %> </h1>
+
+
+<ul> Technical information about the <%= @drone.title %>
+  <li> brand:  <%= @drone.brand %></li>
+  <li> model: <%= @drone.model %></li>
+  <li> size: <%= @drone.size %></li>
+  <li> weight: <%= @drone.weight %></li>
+  <li> endurance: <%= @drone.endurance %></li>
+</ul>
+
+<h2> <%= @price %> EUR /per day </h2>
+<h2> Available in <%= @city %> in <%= @country %></h2>
 <p><%= @drone.address %></p>
 
-<%= link_to "Delete", drone_path(drone),
-method: :delete,
-data: { confirm: "Are you sure baby?"} %>
+<h2> Meet the happy owner of the <%= @drone.title %></h2>
+<p> <%= @drone.user.first_name %> <%= @drone.user.last_name %></p>
+<p> I am super happy to present you theadd a little text with all that shit </p>
+
+<p> you shoul class button that will pop up the render form </p>
+
+
+<%= render 'bookings/form', drone: @drone %>
