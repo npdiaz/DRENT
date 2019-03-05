@@ -1,3 +1,6 @@
 <h2><%= @drone.title %></h2>
 <p><%= @drone.address %></p>
 
+<%= link_to "Delete", drone_path(drone),
+method: :delete,
+data: { confirm: "Are you sure baby?"} %>
