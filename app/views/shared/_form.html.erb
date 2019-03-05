@@ -1,0 +1,24 @@
+<%= simple_form_for(@drone) do |f| %>
+  <%= f.error_notification %>
+
+  <div class = "form-inputs">
+    <%= f.label :title %>
+    <%= f.input :title %>
+
+    <%= f.input :description %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :size %>
+    <%= f.input :weight %>
+    <%= f.input :endurance %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :price %>
+  </div>
+
+  <div clas = "form-action">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>
