@@ -1,0 +1,14 @@
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+
+  <div class = "form-inputs">
+    <%= f.input :rent_start_date %>
+    <%= f.input :rent_end_date %>
+    <%= f.input :drone_id, as: :hidden %>
+  </div>
+
+  <div clas = "form-action">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

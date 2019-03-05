@@ -1,10 +1,11 @@
 class DronesController < ApplicationController
   def index         # GET /drones
-    @drones = Drones.all
+    @drones = Drone.all
   end
 
   def show          # GET /drones/:id
     @drone = Drone.find(params[:id])
+    @booking = @drone.bookings.new
   end
 
   def new           # GET /drones/new
@@ -34,7 +35,7 @@ class DronesController < ApplicationController
     @drone.destroy
 
       # no need for app/views/restaurants/destroy.html.erb
-    redirect_to drone_path
+    redirect_to drone_path(@drone)
   end
 
     private

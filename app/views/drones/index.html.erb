@@ -1,4 +1,4 @@
 <% @drones.each do |drone| %>
-  <h2><%= drone.title %></h2>
+  <h2><%= link_to drone.title, drone_path(drone) %></h2>
   <p><%= drone.address %></p>
 <% end %>
