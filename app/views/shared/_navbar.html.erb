@@ -1,0 +1,14 @@
+<div class="navbar-wagon">
+  <%= link_to root_path do %>
+    <%= image_tag "logo_initial.png", alt: "logo", width: 150 , id: 'nav-logo' %>
+    <div style="display: none;" id="other-img"> <%= image_path 'logo.png' %></div>
+    <div style="display: none;" id="init-img"> <%= image_path 'logo_initial.png' %></div>
+
+  <% end %>
+
+  <div class="navbar-wagon-right">
+    <div class= "navbar-wagon-item navbar-wagon-link"><%= link_to "Log in", new_user_session_path %> </div>
+    <div class= "navbar-wagon-item navbar-wagon-link"><%= link_to "Sign up", new_user_registration_path %> </div>
+  </div>
+</div>
+
