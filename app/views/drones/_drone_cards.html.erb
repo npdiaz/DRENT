@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <% drones.each do |drone| %>
+      <div class="col-xs-12 col-sm-6 col-md-3 card" >
+
+
+          <%= image_tag "drone1.jpg", alt: "drone" %>
+
+
+
+          <div class="card-infos">
+            <div>
+              <p class="card-uppercase"><%= drone.brand %> - <%= drone.model %></p>
+              <h2><%= link_to drone.title, drone_path(drone) %></h2>
+              <p class="card-pricing"><%= drone.price %>€</p>
+              <!-- stars -->
+            </div>
+          </div>
+
+
+
+      </div>
+    <% end %>
+  </div>
+</div>

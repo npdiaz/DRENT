@@ -1,4 +1,31 @@
-<h1> Welcome to the profile of <%= @drone.title %> </h1>
+
+
+    <div class="flex-container show-drone" style="margin-top: 110px;">
+      <div class="card text-center">
+        <h1>Drent Dris Drone?</h1>
+      </div>
+      <div class="card text-center">
+        <img src="../images/logo.png" alt="Drent">
+        <h1> <%= @drone.title %> </h1>
+          <ul> Specs
+            <li> Make/Model:  <%= @drone.brand %> <%= @drone.model %></li>
+            <li> size: <%= @drone.size %></li>
+            <li> weight: <%= @drone.weight %></li>
+            <li> endurance: <%= @drone.endurance %></li>
+          </ul>
+          <h2> <%= @price %> EUR /per day </h2>
+          <h2> Available in <%= @city %> <%= @country %></h2>
+          <p><%= @drone.address %></p>
+
+          <h2> Meet the Droner! </h2>
+          <p> <%= @drone.user.first_name %> <%= @drone.user.last_name %></p>
+          <p> I am drery happy to droffer you dris here drone from my special collection. Dron't miss out on this droppertunity to dry my drery drool droney dringy. </p>
+      </div>
+    </div>
+
+
+
+<!-- <h1> Welcome to the profile of <%= @drone.title %> </h1>
 
 <% @drone.photos.each do |photo| %>
   <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
@@ -28,4 +55,4 @@
     <%= review.rating  %>
 <% end %>
 
-<%= render 'bookings/form', drone: @drone %>
+<%= render 'bookings/form', drone: @drone %> -->

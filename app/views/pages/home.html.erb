@@ -1,11 +1,9 @@
-<div class="home-banner">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
-    </div>
+<div class="background">
+  <div class="home-banner">
+    <h1>Find your ideal drone experience</h1>
+  </div>
+  <div class="secondary-header">
+    <h1> Our best rated drones </h1>
+    <%= render 'drones/drone_cards', drones: @drones %>
   </div>
 </div>
