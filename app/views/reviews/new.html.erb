@@ -1,0 +1,18 @@
+
+<div class="formulaire">
+  <div class="container2 container">
+
+  <%= simple_form_for [@booking, @review] do |f| %>
+    <div class="col-xs-10">
+    <%= f.input :description %>
+    </div>
+    <div class="col-xs-2">
+    <%= f.input :rating, :collection => %w[1 2 3 4 5]%>
+    </div>
+    <div class="col-xs-12">
+    <%= f.submit "add a review", method: :create, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  </div>
+</div>
