@@ -18,6 +18,9 @@
 <p> I am super happy to present you theadd a little text with all that shit </p>
 
 <p> you shoul class button that will pop up the render form </p>
-
+<%  @drone.reviews.each do |review|%>
+    <%= review.description  %>
+    <%= review.rating  %>
+<% end %>
 
 <%= render 'bookings/form', drone: @drone %>
