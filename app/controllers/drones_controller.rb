@@ -14,9 +14,12 @@ class DronesController < ApplicationController
 
   def create        # POST /drones
     @drone = Drone.new(drone_params)
-    @drone.save
-    redirect_to drone_path(@drone)
-
+    @drone.user = current_user
+    if @drone.save
+      redirect_to drone_path(@drone), notice: 'Drone created'
+    else
+      render :new
+    end
   end
 
   def edit          # GET /drones/:id/edit
@@ -25,9 +28,11 @@ class DronesController < ApplicationController
 
   def update        # PATCH /drones/:id
     @drone = Drone.find(params[:id])
-    @drone.update(drone_params)
-
-    redirect_to drone_path(@drone)
+    if @drone.update(drone_params)
+      redirect_to drone_path(@drone), notice: 'Drone updated'
+    else
+      render :edit
+    end
   end
 
   def destroy       # DELETE /drones/:id
@@ -43,7 +48,7 @@ class DronesController < ApplicationController
     def drone_params
       # *Strong params*: You need to *whitelist* what can be updated by the user
       # Never trust user data!
-      params.require(:drone).permit(:title, :address)
+      params.require(:drone).permit(:title, :description, :brand, :model, :size, :weight, :endurance, :address, :city, :country, :price)
     end
 
 end
