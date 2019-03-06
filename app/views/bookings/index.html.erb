@@ -1,4 +1,4 @@
-hello I am empty
+<p>hello I am empty</p>
 
 <% @bookings.each do |booking| %>
   <h2> You booked the <%= booking.drone.title %></h2>
@@ -6,5 +6,8 @@ hello I am empty
   <p> Your booking ends on <%= booking.rent_end_date.strftime("%m/%d/%Y") %></p>
   <p> The total cost will be <%= booking.total_price %> EUR </p>
   <p> status : <%= booking.status %></p>
+  <div class="btn-medium">
+    <p>Create a review</p>
+  </div>
 <% end %>
 
