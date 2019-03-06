@@ -1,0 +1,10 @@
+hello I am empty
+
+<% @bookings.each do |booking| %>
+  <h2> You booked the <%= booking.drone.title %></h2>
+  <p> Your booking starts on <%=  booking.rent_start_date.strftime("%m/%d/%Y") %></p>
+  <p> Your booking ends on <%= booking.rent_end_date.strftime("%m/%d/%Y") %></p>
+  <p> The total cost will be <%= booking.total_price %> EUR </p>
+  <p> status : <%= booking.status %></p>
+<% end %>
+
