@@ -1,16 +1,32 @@
-<h1> Welcome to the profile of <%= @drone.title %> </h1>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+
+
+    <div class="flex-container show-drone" style="margin-top: 110px;">
+      <div class="card text-center">
+        <h1>Drent Dris Drone?</h1>
+      </div>
+      <div class="card text-center">
+        <img src="../images/logo.png" alt="Drent">
+        <h1> <%= @drone.title %> </h1>
+          <ul> Specs
+            <li> Make/Model:  <%= @drone.brand %> <%= @drone.model %></li>
+            <li> size: <%= @drone.size %></li>
+            <li> weight: <%= @drone.weight %></li>
+            <li> endurance: <%= @drone.endurance %></li>
+          </ul>
+          <h2> <%= @price %> EUR /per day </h2>
+          <h2> Available in <%= @city %> <%= @country %></h2>
+          <p><%= @drone.address %></p>
+
+          <h2> Meet the Droner! </h2>
+          <p> <%= @drone.user.first_name %> <%= @drone.user.last_name %></p>
+          <p> I am drery happy to droffer you dris here drone from my special collection. Dron't miss out on this droppertunity to dry my drery drool droney dringy. </p>
+      </div>
     </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1>
-      <p>Architect & Engineer</p>
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>
+
+
+
+<!-- <h1> Welcome to the profile of <%= @drone.title %> </h1>
+
 
 <ul> Technical information about the <%= @drone.title %>
   <li> brand:  <%= @drone.brand %></li>
@@ -30,5 +46,5 @@
 
 <p> you shoul class button that will pop up the render form </p>
 
-<!--
+
 <%= render 'bookings/form', drone: @drone %> -->
