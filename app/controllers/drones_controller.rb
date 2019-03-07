@@ -10,6 +10,7 @@ class DronesController < ApplicationController
 
   def new           # GET /drones/new
     @drone = Drone.new
+    @drone.photos.build
   end
 
   def create        # POST /drones
@@ -48,7 +49,7 @@ class DronesController < ApplicationController
     def drone_params
       # *Strong params*: You need to *whitelist* what can be updated by the user
       # Never trust user data!
-      params.require(:drone).permit(:title, :description, :brand, :model, :size, :weight, :endurance, :address, :city, :country, :price)
+      params.require(:drone).permit(:title, :description, :brand, :model, :size, :weight, :endurance, :address, :city, :country, :price, photos_attributes: [:photo])
     end
 
 end
