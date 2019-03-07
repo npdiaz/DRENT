@@ -6,7 +6,7 @@
 
   <% end %>
 
-  <input class="search-bar" type="text" placeholder="Search..">
+  <input class="search-bar" type="text" placeholder="Search.." id="search-bar">
   <% if user_signed_in? == false %>
     <div class="navbar-wagon-right">
       <div class= "navbar-wagon-item navbar-wagon-link"><%= link_to "Log in", new_user_session_path %> </div>
