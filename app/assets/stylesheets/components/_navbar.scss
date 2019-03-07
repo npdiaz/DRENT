@@ -49,7 +49,7 @@
 }
 .search-bar{
   float: center;
-  padding: 7px 30px;
+  padding: 7px 30px 7px 12px;
   border: 0.1px solid white;
   margin-top: 9px;
   margin-right: 40px;
@@ -61,6 +61,23 @@
   color:#FCFCFC;
   font-size: 16px;
 }
+.search-bar-main{
+  float: center;
+  padding: 7px 30px 7px 12px;
+  border: 0.1px solid gray;
+  margin-top: 9px;
+  margin-right: 40px;
+  font-size: 15px;
+  background-color: transparent;
+  color: gray;
+
+}
+
+.search-bar-main::placeholder {
+  color: gray;
+  font-size: 15px;
+}
+
 // ----NOT YET EXECUTED
 
 /* Logo */
