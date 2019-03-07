@@ -2,7 +2,7 @@
   <div class="row">
     <% drones.each do |drone| %>
       <div class="col-xs-12 col-sm-6 col-md-3 card" >
-        <%= cl_image_tag drone.photos.first, width: '100%' %>
+        <%= cl_image_tag drone.photos.first&.photo&.url, width: '100%' %>
         <div class="card-infos">
           <div>
             <p class="card-uppercase"><%= drone.brand %> - <%= drone.model %></p>
