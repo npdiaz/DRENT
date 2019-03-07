@@ -1,4 +1,8 @@
 
+.container-dashboard {
+  width: 1200px;
+}
+
 .background {
   background-color: #FCFCFC;
 }
@@ -7,3 +11,22 @@
   font-size: 40px;
   padding: 0 65px;
 }
+
+.dashboard-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100px;       /* Set the width */
+  margin: 0 auto;
+}
+
+.profile-picture {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.booking-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+}
+
