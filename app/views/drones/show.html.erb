@@ -1,4 +1,3 @@
-
 <div class="flex-container show-drone" style="margin-top: 110px;">
   <div class="banner-show">
   </div>
@@ -31,17 +30,7 @@
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body">
-        ...
-
         <%= render  'bookings/form' %>
-
-<% @drone.photos.each do |photo| %>
-  <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
-<% end %>
-
-<%= link_to "Add picture", new_drone_photo_path(@drone) %>
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -52,8 +41,8 @@
 </div>
 
 
+<% @drone.photos.each do |photo| %>
+  <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+<% end %>
 
-      <!-- <p> Meet the Droner! </p>
-      <p> <%= @drone.user.first_name %> <%= @drone.user.last_name %></p>
-      <p> I am drery happy to droffer you dris here drone from my special collection. Dron't miss out on this droppertunity to dry my drery drool droney dringy. </p>
-
+<%= link_to "Add picture", new_drone_photo_path(@drone) %>
