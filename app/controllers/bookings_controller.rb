@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path, notice: 'Booking created'
     else
-      redirect_to drones_path, error: 'Booking created'
+      redirect_to root_path, alert: @booking.errors.full_messages.join(',')
     end
   end
 
