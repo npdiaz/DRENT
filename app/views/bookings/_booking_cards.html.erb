@@ -14,7 +14,10 @@
                <!-- would like to add diifferent -->
               <p> status : <%= booking.status %></p>
               <!-- stars -->
+
+              <% if booking.reviews.empty?  %>
               <%= link_to "Create a review", new_booking_review_path(booking), class: "btn btn-green" %>
+              <% end %>
               </div>
 
 
