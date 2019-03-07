@@ -3,9 +3,11 @@
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-6 col-md-4 card" >
-
+        <% if booking.drone.photos.empty? %>
           <%= image_tag "drone1.jpg", alt: "drone" %>
-
+          <% else %>
+     <%= cl_image_tag(booking.drone.photos.first.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+       <% end %>
           <div class="card-infos">
             <div>
               <p class="card-booking"><%= booking.drone.title %></p>
