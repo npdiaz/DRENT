@@ -1,6 +1,11 @@
 <div class="flex-container show-drone" style="margin-top: 110px;">
+ <% if !@drone.photos.empty? %>
   <div class="banner-show" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
+    <% else %>
+  <div class="banner-show" style="background-image: url('')">
+    <% end %>
   </div>
+
   <div class="content-show">
     <div>
       <h1> <%= @drone.title %> </h1>
