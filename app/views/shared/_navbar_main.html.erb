@@ -3,16 +3,21 @@
     <%= image_tag "logo.png", alt: "logo", width: 150 , id: 'nav-logo' %>
   <% end %>
 
-<input class="search-bar" type="text" placeholder="Search..">
+<input class="search-bar-main" type="text" placeholder="Search..">
   <% if user_signed_in? == false %>
     <div class="navbar-wagon-right">
       <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Log in", new_user_session_path %> </div>
       <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Sign up", new_user_registration_path %> </div>
     </div>
   <% else %>
-    <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "My bookings", bookings_path %> </div>
-    <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Add a drone", new_drone_path %> </div>
-    <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Log out" %> </div>
+    <div class="navbar-wagon-right">
+      <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "My bookings", bookings_path %> </div>
+      <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Add a drone", new_drone_path %> </div>
+      <div class= "navbar-wagon-item navbar-wagon-link-main"><%= link_to "Log out" %> </div>
+      <%= link_to user_registration_path do %>
+        <%= image_tag "avatar.jpg", class: "avatar" %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
