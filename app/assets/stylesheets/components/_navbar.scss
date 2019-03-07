@@ -64,18 +64,18 @@
 .search-bar-main{
   float: center;
   padding: 7px 30px;
-  border: 0.1px solid #484848;
+  border: 0.1px solid gray;
   margin-top: 9px;
   margin-right: 40px;
   font-size: 15px;
   background-color: transparent;
-  color:#484848;
+  color: gray;
 
 }
 
 .search-bar-main::placeholder {
-  color:#484848;
-  font-size: 16px;
+  color: gray;
+  font-size: 15px;
 }
 
 // ----NOT YET EXECUTED
