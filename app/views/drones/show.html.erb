@@ -1,53 +1,75 @@
-<div class="flex-container show-drone" style="margin-top: 110px;">
- <% if !@drone.photos.empty? %>
-  <div class="banner-show" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
-    <% else %>
-  <div class="banner-show" style="background-image: url('')">
-    <% end %>
-  </div>
+<div class="flex-container">
+  <div class="row-child">
 
-  <div class="content-show">
-    <div>
-      <h1> <%= @drone.title %> </h1>
-      <ul> Specs
-        <li> Make/Model:  <%= @drone.brand %> <%= @drone.model %></li>
-        <li> size: <%= @drone.size %></li>
-        <li> weight: <%= @drone.weight %></li>
-        <li> endurance: <%= @drone.endurance %></li>
-      </ul>
-    </div>
-    <div class="content-booking">
-      <p> <%= @price %> EUR /per day </p>
-      <p> Available in <%= @city %> <%= @country %></p>
-      <p><%= @drone.address %></p>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Rent me!
-      </button>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <%= render  'bookings/form' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="show-drone">
+     <% if !@drone.photos.empty? %>
+     <div class="banner-show" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
+     </div>
+     <% else %>
+     <div class="banner-show" style="background-image: url('')">
+      <% end %>
     </div>
   </div>
 </div>
 
 
-<% @drone.photos.each do |photo| %>
-  <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
-<% end %>
+<div class="row-child">
+  <div class="flex-container-two">
+    <div class="row-child-two">
 
-<%= link_to "Add picture", new_drone_photo_path(@drone) %>
+      <div class="content-show">
+        <div class="content-info">
+          <h1> <%= @drone.title %> </h1>
+          <ul> Specs
+            <li> Make/Model:  <%= @drone.brand %> <%= @drone.model %></li>
+            <li> Size: <%= @drone.size %></li>
+            <li> Weight: <%= @drone.weight %></li>
+            <li> Endurance: <%= @drone.endurance %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row-child-two">
+
+      <div class="content-booking">
+        <p> <%= @drone.price %> EUR /per day </p>
+        <p> Available in <%= @drone.city %> <%= @drone.country %>
+        </p>
+        <p><%= @drone.address %></p>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Rent me!
+        </button>
+      </div>
+    </div>
+
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <%= render 'bookings/form' %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+
+
+      <% @drone.photos.each do |photo| %>
+      <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+      <% end %>
+
+      <%= link_to "Add picture", new_drone_photo_path(@drone) %>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
