@@ -1,6 +1,13 @@
 <% @drones.each do |drone| %>
   <h2><%= link_to drone.title, drone_path(drone) %></h2>
-  <p><%= drone.photos.first %></p>
+  <% drone.photos.each do |photo| %>
+  <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+  <% end %>
+
   <p><%= drone.address %></p>
   <p><%= drone.average_ratings %></p>
 <% end %>
+<div>
+  <h3>Drones in your area</h3>
+  <%= render 'drones/drone_cards', drones: @drones %>
+</div>

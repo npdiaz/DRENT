@@ -1,7 +1,7 @@
 <%= simple_form_for(@drone) do |f| %>
   <%= f.error_notification %>
 
-  <div class = "form-inputs">
+  <div class = "form-group">
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :brand %>
@@ -13,10 +13,13 @@
     <%= f.input :city %>
     <%= f.input :country, as: :text %>
     <%= f.input :price %>
+    <%= f.simple_fields_for :photos do |p| %>
+        <%= p.input :photo, as: :file %>
+      <% end %>
   </div>
 
   <div clas = "form-action">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
   </div>
 
 <% end %>
