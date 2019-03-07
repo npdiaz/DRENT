@@ -4,3 +4,7 @@
   <p><%= drone.address %></p>
   <p><%= drone.average_ratings %></p>
 <% end %>
+<div>
+  <h3>Drones in your area</h3>
+  <%= render 'drones/drone_cards', drones: @drones %>
+</div>
