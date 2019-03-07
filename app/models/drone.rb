@@ -7,8 +7,7 @@ class Drone < ApplicationRecord
 
   validates :price, numericality: { only_integer: true, greater_than: 0}
   validates :price, :title, presence: true
-
-
+  accepts_nested_attributes_for :photos
 
   def average_ratings
     total_rating = 0

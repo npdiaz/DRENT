@@ -1,4 +1,13 @@
+<br/>
+<br/>
+<br/>
+<h1> Welcome to the profile of <%= @drone.title %> </h1>
 
+<% @drone.photos.each do |photo| %>
+  <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+<% end %>
+
+<%= link_to "Add picture", new_drone_photo_path(@drone) %>
 
     <div class="flex-container show-drone" style="margin-top: 110px;">
       <div class="card text-center">
@@ -24,7 +33,6 @@
     </div>
 
 
-
 <h1> Welcome to the profile of <%= @drone.title %> </h1>
 
 <% @drone.photos.each do |photo| %>
@@ -33,7 +41,8 @@
 
 <%= link_to "Add picture", new_drone_photo_path(@drone) %>
 
-<ul> Technical information about the <%= @drone.title %>
+
+<!-- <ul> Technical information about the <%= @drone.title %>
   <li> brand:  <%= @drone.brand %></li>
   <li> model: <%= @drone.model %></li>
   <li> size: <%= @drone.size %></li>
@@ -55,4 +64,5 @@
     <%= review.rating  %>
 <% end %>
 
-<%= render 'bookings/form', drone: @drone %>
+<%= render 'bookings/form', drone: @drone %> -->
+
