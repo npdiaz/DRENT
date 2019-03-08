@@ -18,7 +18,7 @@
         <div class="card-trip-infos">
           <div clas= "text-dashboard">
             <div class="text-dash">
-            <p class="card-booking"><%= booking.drone.title %></p>
+            <p class="card-booking"><%= link_to booking.drone.title, drone_path(booking.drone)%></p>
             <p> Rental from <%=  booking.rent_start_date.strftime("%m/%d/%Y") %> To <%= booking.rent_end_date.strftime("%m/%d/%Y") %></p>
             <p> Total cost <%= booking.total_price %> EUR </p>
              <!-- would like to add diifferent -->

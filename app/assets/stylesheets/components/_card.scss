@@ -114,6 +114,7 @@
   border-radius: 2px;
   width:250px;
   height: 400px;
+  position: relative;
 }
 
 .picture-dahboard {
@@ -129,21 +130,37 @@
   margin: 0;
 }
 
+.text-dashboard h2 {
+  margin: 10px;
+}
 
-.card-trip .card-trip-infos {
+.text-dashboard a {
+  font-size: 16px;
+  color: #484848 !important;
+}
+.card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 0px;
+}
+.text-dashboard h2{
+  margin: 0;
+  line-height: 20px
 }
 
 .btn-dashboard {
   padding-left: 30px;
 }
 
-.card-booking {
+.card-booking a {
   font-weight: bold;
+  color: #484848 !important;
 }
 
 .text-dash {
