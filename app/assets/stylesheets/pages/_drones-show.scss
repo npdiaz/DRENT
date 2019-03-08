@@ -1,37 +1,18 @@
+.flex-container{
+  display: flex;
+  flex-direction:column;
+}
+.flex-container-two{
+  display: flex;
+}
+.row-child{
+  flex-direction:row;
+}
 .show-drone {
-   // background-image: asset-url("banner.jpg");
-     background-position: center; /* Center the image */
+  background-image: asset-url("banner.jpg");
+  background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
   min-height: 1000px;
-}
-
-.img-drone {
-  width: 200px;
-
-}
-
-.banner-show {
-  background-size: cover;
-  height: 75vh;
-  color: #eee;
-  text-align: center;
-  padding-top: 40vh;
-}
-
-.content-show {
-  display: flex;
-  justify-content: space-between;
-}
-
-.content-booking {
-  width: 50%;
-  background-color: #FCFCFC;
-}
-
-.map-booking {
-  flex: 0 0 450px;
-  height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
+  margin-top: 110px;
 }
