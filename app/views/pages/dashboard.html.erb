@@ -5,37 +5,32 @@
 
 
 <div class="container-dashboard">
-  <div class="row">
-    <div class="title text-center text-justify" >
-      <h1> Welcome on your profile <%= current_user.first_name %> </h1>
-    </div>
+  <div class="title-dashboard" >
+    <h1> Welcome on your profile <%= current_user.first_name %> </h1>
   </div>
-  <div class="row">
   <div class="dashboard-profile">
     <div class="profile-picture">
-      <%= image_tag "avatar.jpg", class: "avatar" %>
+      <%= image_tag "avatar.jpg", class: "avatar-xtralarge" %>
     </div>
     <div class="user-information">
       <p> <%= current_user.first_name %>  <%= current_user.last_name %></p>
-      <p> <%= current_user.email %>  <%= current_user.telephone%></p>
+      <p> email: <%= current_user.email %> Tel: <%= current_user.telephone%></p>
       <p> <%= current_user.birth_date %>  <%= current_user.country_id %></p>
     </div>
     <div class="edit-btn">
-  </div>
-
+      <%= link_to "Edit profile", dashboard_path, class: "btn btn-green" %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="booking-dashboard">
+  <div class="booking-dashboard2">
     <div class="your-bookings">
       <h2> your bookings</h2>
-      <%= render 'bookings/booking_cards', bookings: @my_bookings%>
+      <%= render 'bookings/booking_cards_dashboard', bookings: @my_bookings %>
     </div>
     <div class="your-drones">
       <h2>your drones</h2>
-      <%= render 'drones/drone_cards', drones: current_user.drones %>
+      <%= render 'drones/drones_cards_dashboard', drones: current_user.drones %>
     </div>
-  <div class="row">
   </div>
 </div>
+
