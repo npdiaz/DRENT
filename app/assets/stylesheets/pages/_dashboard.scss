@@ -33,6 +33,10 @@
     text-align: center;
 
 }
+.booking-dashboard2 h2{
+font-weight: normal;
+
+}
 
 .container-dashboard {
   margin-left: auto;
@@ -55,7 +59,7 @@ text-align: center;
 
 .a-review{
   padding: 15px;
-  border-bottom: 2px solid #32A287;
+  border-bottom: 1px solid #32A287;
   margin: 0 100px;
   text-align: center;
 }
@@ -64,6 +68,9 @@ text-align: center;
 }
 
 .review-description{
-  font-size:14px;
+  font-size:15px;
   font-weight:lighter;
+}
+.reviews-list h2{
+font-weight: normal;
 }
