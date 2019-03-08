@@ -41,7 +41,23 @@
         </button>
       </div>
     </div>
+  </div>
 
+  <div class="content-photos">
+    <h5> Other photos: </h5>
+    <% @drone.photos.each do |photo| %>
+    <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+    <% end %>
+
+    <%= link_to "Add picture", new_drone_photo_path(@drone) %>
+  </div>
+
+  <br/>
+  <br/>
+  <%= link_to "Edit drone", edit_drone_path(@drone), class: "btn btn-primary btn-sm" %>
+
+  <%= link_to "Delete drone", drone_path(@drone), method: :delete, class: "btn btn-warning btn-sm" %>
+  <!--   <button type="button" class="fas fas fa-trash-alt"></button> -->
 
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -60,16 +76,6 @@
           </div>
         </div>
       </div>
-
-
-      <% @drone.photos.each do |photo| %>
-      <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
-      <% end %>
-
-      <%= link_to "Add picture", new_drone_photo_path(@drone) %>
     </div>
   </div>
-</div>
-</div>
-</div>
 </div>

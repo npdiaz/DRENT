@@ -2,7 +2,7 @@ class Drone < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :reviews, through: :bookings
 
   validates :price, numericality: { only_integer: true, greater_than: 0}
