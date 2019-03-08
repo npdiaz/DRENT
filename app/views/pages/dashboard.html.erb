@@ -28,8 +28,22 @@
       <%= render 'bookings/booking_cards_dashboard', bookings: @my_bookings %>
     </div>
     <div class="your-drones">
+       <div>
       <h2>your drones</h2>
-      <%= render 'drones/drones_cards_dashboard', drones: current_user.drones %>
+      <%= render 'drones/drones_cards_dashboard', drones: current_user.drones %>  <div class="booking-dashboard2">
+       </div>
+        <div class="reviews-list">
+          <h2>your drones' reviews</h2>
+          <% current_user.drones.each do |drone| %>
+            <%= drone.title %>
+            <ul>
+              <% drone.reviews.each do |rev| %>
+                <%= rev.description %>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+
     </div>
   </div>
 </div>
