@@ -47,3 +47,23 @@ text-align: center;
   padding-top: 32px;
   padding-left: 140px;
 }
+
+.reviews-list h2 {      /* Set the width */
+  font-weight: bold;
+}
+
+
+.a-review{
+  padding: 15px;
+  border-bottom: 2px solid #32A287;
+  margin: 0 100px;
+  text-align: center;
+}
+.reviewed-drone{
+  font-size:16px;
+}
+
+.review-description{
+  font-size:14px;
+  font-weight:lighter;
+}

@@ -41,14 +41,17 @@
 
   <div class="content-photos">
     <h5> Other photos: </h5>
-    <% @drone.photos.each do |photo| %>
-      <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+    <% if !@drone.photos.empty? %>
+      <% @drone.photos.each_with_index do |photo,i| %>
+      <% next if i == 0 %>
+       <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+      <% end %>
     <% end %>
   </div>
 
     <br/>
     <br/>
-
+  <!--   <button type="button" class="fas fas fa-trash-alt"></button> -->
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">

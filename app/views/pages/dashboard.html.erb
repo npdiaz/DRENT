@@ -10,7 +10,7 @@
   </div>
   <div class="dashboard-profile">
     <div class="profile-picture">
-      <%= image_tag "avatar.jpg", class: "avatar-xtralarge" %>
+      <%= image_tag "georgewbush.jpg", class: "avatar-xtralarge" %>
     </div>
     <div class="user-information">
       <p> <%= current_user.first_name %>  <%= current_user.last_name %></p>
@@ -21,8 +21,9 @@
       <%= link_to "Edit profile", dashboard_path, class: "btn btn-green" %>
     </div>
   </div>
+</div>
 
-  <div class="booking-dashboard2">
+<div class="booking-dashboard2">
     <div class="your-bookings">
       <h2> your bookings</h2>
       <%= render 'bookings/booking_cards_dashboard', bookings: @my_bookings %>
@@ -30,7 +31,24 @@
     <div class="your-drones">
       <h2>your drones</h2>
       <%= render 'drones/drones_cards_dashboard', drones: current_user.drones %>
+        <div class="reviews-list">
+          <h2>your drones' reviews</h2>
+          <div class="review-content">
+            <div class="review-row">
+                <% current_user.drones.each do |drone| %>
+                <div class="a-review">
+                  <h4 class="reviewed-drone"><%= drone.title %></h4>
+
+                    <% drone.reviews.each do |rev| %>
+                      <p class="review-description"><%= rev.description %></p>
+                    <% end %>
+
+                </div>
+                <% end %>
+
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
 </div>
 

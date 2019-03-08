@@ -5,12 +5,12 @@
       <div class="col-xs-12 col-sm-6 col-md-4 card" >
         <% if booking.drone.photos.empty? %>
           <%= image_tag "drone1.jpg", alt: "drone" %>
-          <% else %>
-     <%= cl_image_tag(booking.drone.photos.first.photo.url, :width => 200, :height => 250, :crop => :fill) %>
-       <% end %>
+        <% else %>
+          <%= cl_image_tag(booking.drone.photos.first.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+        <% end %>
           <div class="card-infos">
             <div>
-              <p class="card-booking"><%= booking.drone.title %></p>
+              <p class="card-booking"><%= link_to booking.drone.title, drone_path(booking.drone)%></p>
               <p> Rental from <%=  booking.rent_start_date.strftime("%m/%d/%Y") %> To <%= booking.rent_end_date.strftime("%m/%d/%Y") %></p>
               <p> Total cost <%= booking.total_price %> EUR </p>
                <!-- would like to add diifferent -->
