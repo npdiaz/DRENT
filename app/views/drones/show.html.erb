@@ -1,12 +1,12 @@
 <div class="flex-container">
   <div class="row-child">
 
-    <div class="show-drone">
-     <% if !@drone.photos.empty? %>
+    <div>
+     <% if @drone.photos.any? %>
      <div class="banner-show" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
      </div>
      <% else %>
-     <div class="banner-show" style="background-image: url('')">
+     <div class="banner-show" style="background-image: url('<%= asset_url("banner.jpg") %>')">
       <% end %>
     </div>
   </div>
@@ -45,7 +45,7 @@
 
   <div class="content-photos">
     <h5> Other photos: </h5>
-    <% @drone.photos.each do |photo| %>
+    <% @drone.photos.to_a[1..-1].each do |photo| %>
     <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
     <% end %>
 
