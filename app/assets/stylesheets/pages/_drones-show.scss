@@ -16,5 +16,22 @@
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
-  min-height: 1000px;
+  min-height: 100px;
+  margin-top: 110px;
+}
+
+.container-show-drone {
+  display: flex;
+  margin-top: 70px;
+      padding: 30px;
+      justify-content: space-evenly;
+}
+
+.container-show-drone__specs {
+}
+
+.container-show-drone__image {
+  height: 300px;
+  width: 510px;
+  background-size: cover;
 }
