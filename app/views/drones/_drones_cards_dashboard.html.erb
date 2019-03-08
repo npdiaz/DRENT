@@ -1,0 +1,36 @@
+<div class="booking-dashboard">
+
+  <div class="row">
+
+    <% drones.each do |drone| %>
+      <div class="col-xs-6">
+
+        <div class="card-trip">
+
+            <div class="picture-dahboard">
+             <% if drone.photos.empty? %>
+             <%= image_tag "drone1.jpg", alt: "drone", :width => 200, :height => 250, :crop => :fill %>
+             <% else %>
+             <%= cl_image_tag(drone.photos.first.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+             <% end %>
+           </div>
+
+           <div class="card-trip-infos">
+            <div clas= "text-dashboard">
+              <p class="card-uppercase"><%= drone.brand %> - <%= drone.model %></p>
+              <h2><%= link_to drone.title, drone_path(drone) %></h2>
+              <p class="card-pricing"><%= drone.price %>€</p>
+              <div class="star">
+               <% test = drone.average_ratings %>
+               <i class="<%= test>0 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+               <i class="<%= test>1 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+               <i class="<%= test>2 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+               <i class="<%= test>3 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+               <i class="<%= test>4 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+           </div>
+          </div>
+        </div>
+      </div>
+  </div>
+    <% end %>
+</div>

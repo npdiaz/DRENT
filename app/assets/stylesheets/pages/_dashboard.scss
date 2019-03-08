@@ -6,3 +6,44 @@
   font-size: 40px;
   padding: 0 65px;
 }
+
+.dashboard-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 150px;       /* Set the width */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  color: #484848;
+  border-radius: 2px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.profile-picture {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-left: 80px;
+}
+
+.booking-dashboard2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+
+}
+
+.container-dashboard {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-dashboard {
+text-align: center;
+}
+
+.edit-btn {
+  padding-top: 32px;
+  padding-left: 140px;
+}

@@ -44,8 +44,6 @@
     <% @drone.photos.each do |photo| %>
       <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
     <% end %>
-
-
   </div>
 
     <br/>
