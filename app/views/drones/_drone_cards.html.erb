@@ -3,11 +3,11 @@
     <% drones.each do |drone| %>
       <div class="col-xs-12 col-sm-6 col-md-3 card" >
         <%= cl_image_tag drone.photos.first&.photo&.url, width: '100%' %>
-        <div class="card-infos">
+        <div class="card-trip">
           <div>
-            <p class="card-uppercase"><%= drone.brand %> - <%= drone.model %></p>
-            <h2><%= link_to drone.title, drone_path(drone) %></h2>
-            <p class="card-pricing"><%= drone.price %>€</p>
+            <p> <%= drone.brand %> - <%= drone.model %> </p>
+            <p><%= link_to drone.title, drone_path(drone) %></p>
+            <p> <%= drone.price %> </p>
             <div class="star">
              <% test = drone.average_ratings %>
               <i class="<%= test>0 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>

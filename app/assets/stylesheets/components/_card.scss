@@ -105,9 +105,47 @@
 
 // Marie card booking
 
-.card-booking{
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin: 15px;
+  color: #484848;
+  border-radius: 2px;
+  width:250px;
+  height: 400px;
+}
+
+.picture-dahboard {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  padding: 22px;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
   margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.btn-dashboard {
+  padding-left: 30px;
+}
+
+.card-booking {
+  font-weight: bold;
+}
+
+.text-dash {
+  padding-top: 60px;
 }
