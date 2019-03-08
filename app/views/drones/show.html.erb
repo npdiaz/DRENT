@@ -38,6 +38,7 @@
     <%= link_to "Edit drone", edit_drone_path(@drone), class: "btn btn-primary btn-sm" %>
 
     <%= link_to "Delete drone", drone_path(@drone), method: :delete, class: "btn btn-warning btn-sm" %>
+    <%= link_to "Add picture", new_drone_photo_path(@drone), class: "btn btn-primary btn-sm" %>
 
   <div class="content-photos">
     <h5> Other photos: </h5>
