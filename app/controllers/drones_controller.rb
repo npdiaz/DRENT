@@ -41,7 +41,7 @@ class DronesController < ApplicationController
     @drone.destroy
 
       # no need for app/views/restaurants/destroy.html.erb
-    redirect_to drone_path(@drone)
+    redirect_to root_path
   end
 
     private
