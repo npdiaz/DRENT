@@ -1,77 +1,58 @@
-<div class="flex-container">
-  <div class="row-child">
-    <div class="show-drone">
-     <% if !@drone.photos.empty? %>
-     <div class="home-banner" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
-     </div>
-     <% else %>
-     <!-- <div class="home-banner" style="background-image: url('')"> -->
-      <% end %>
+<div class="container-show-drone">
+  <div class="container-show-drone__specs">
+    <h2> <%= @drone.title %> </h2>
+    <table>
+      <tr>
+        <td>Make/Model: </td>
+        <td><%= @drone.brand %> <%= @drone.model %></td>
+      </tr>
+      <tr>
+        <td>Size: </td>
+        <td><%= @drone.size %></td>
+      </tr>
+      <tr>
+        <td>Weight: </td>
+        <td> <%= @drone.weight %></td>
+      </tr>             <tr>
+        <td>Endurance: </td>
+        <td> <%= @drone.endurance %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <div class="container-show-drone__image" style="background-image: url('<%= cl_image_path(@drone.photos.first&.photo&.url) %>')">
+    </div>
+    <div>
+      <p> <%= @drone.price %> EUR /per day </p>
+      <p> Available in <%= @drone.city %> <%= @drone.country %>
+      </p>
+      <p><%= @drone.address %></p>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Rent me!
+      </button>
     </div>
   </div>
-</div>
 
-
-<div class="row-child">
-  <div class="flex-container-two">
-    <div class="row-child-two">
-
-      <div class="content-show">
-        <div class="content-info">
-          <h2> <%= @drone.title %> </h2>
-          <table>
-            <tr>
-              <td>Make/Model: </td>
-              <td><%= @drone.brand %> <%= @drone.model %></td>
-            </tr>
-            <tr>
-              <td>Size: </td>
-              <td><%= @drone.size %></td>
-            </tr>
-            <tr>
-              <td>Weight: </td>
-              <td> <%= @drone.weight %></td>
-            </tr>             <tr>
-              <td>Endurance: </td>
-              <td> <%= @drone.endurance %></td>
-            </tr>
-          </table>
-        </div>
-        REVIEW :
-        <%= Booking.all%>
-      </div>
-    </div>
-    <div class="row-child-two">
-      <div class="content-booking">
-        <p> <%= @drone.price %> EUR /per day </p>
-        <p> Available in <%= @drone.city %> <%= @drone.country %>
-        </p>
-        <p><%= @drone.address %></p>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Rent me!
-        </button>
-      </div>
-    </div>
   </div>
+    <%= link_to "Edit drone", edit_drone_path(@drone), class: "btn btn-primary btn-sm" %>
+
+    <%= link_to "Delete drone", drone_path(@drone), method: :delete, class: "btn btn-warning btn-sm" %>
 
   <div class="content-photos">
     <h5> Other photos: </h5>
     <% @drone.photos.each do |photo| %>
-    <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+      <%= cl_image_tag(photo.photo.url, :width => 200, :height => 250, :crop => :fill) %>
     <% end %>
 
-    <%= link_to "Add picture", new_drone_photo_path(@drone) %>
+
   </div>
 
-  <br/>
-  <br/>
-  <%= link_to "Edit drone", edit_drone_path(@drone), class: "btn btn-primary btn-sm" %>
-
-  <%= link_to "Delete drone", drone_path(@drone), method: :delete, class: "btn btn-warning btn-sm" %>
-  <!--   <button type="button" class="fas fas fa-trash-alt"></button> -->
+    <br/>
+    <br/>
 
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -90,3 +71,6 @@
     </div>
   </div>
 </div>
+
+
+
