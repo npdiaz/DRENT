@@ -41,6 +41,14 @@
 
                     <% drone.reviews.each do |rev| %>
                       <p class="review-description"><%= rev.description %></p>
+                      <div class="star">
+                         <% test = rev.rating %>
+                         <i class="<%= test>0 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+                         <i class="<%= test>1 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+                         <i class="<%= test>2 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+                         <i class="<%= test>3 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+                         <i class="<%= test>4 ? 'fa fa-star checked' : 'fa fa-star' %>"></i>
+                      </div>
                     <% end %>
 
                 </div>
