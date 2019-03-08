@@ -1,12 +1,14 @@
 <div class="flex-container">
   <div class="row-child">
 
+
     <div>
      <% if @drone.photos.any? %>
      <div class="banner-show" style="background-image: url('<%= asset_url(@drone.photos.first&.photo&.url) %>')">
      </div>
      <% else %>
      <div class="banner-show" style="background-image: url('<%= asset_url("banner.jpg") %>')">
+
       <% end %>
     </div>
   </div>
