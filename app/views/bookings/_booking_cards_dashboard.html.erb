@@ -1,0 +1,39 @@
+<div class="booking-dashboard">
+
+  <div class="row">
+    <% bookings.each do |booking| %>
+
+    <div class="col-xs-6">
+
+      <div class="card-trip">
+
+          <div class="picture-dahboard">
+           <% if booking.drone.photos.empty? %>
+             <%= image_tag "drone1.jpg", alt: "drone", :width => 200, :height => 250, :crop => :fill %>
+             <% else %>
+             <%= cl_image_tag(booking.drone.photos.first.photo.url, :width => 200, :height => 250, :crop => :fill) %>
+           <% end %>
+         </div>
+
+        <div class="card-trip-infos">
+          <div clas= "text-dashboard">
+            <div class="text-dash">
+            <p class="card-booking"><%= booking.drone.title %></p>
+            <p> Rental from <%=  booking.rent_start_date.strftime("%m/%d/%Y") %> To <%= booking.rent_end_date.strftime("%m/%d/%Y") %></p>
+            <p> Total cost <%= booking.total_price %> EUR </p>
+             <!-- would like to add diifferent -->
+            <p> status : <%= booking.status %></p>
+            <!-- stars -->
+            </div>
+            <div class="btn-dashboard">
+              <% if booking.reviews.empty?  %>
+              <%= link_to "Create a review", new_booking_review_path(booking), class: "btn btn-green" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <% end %>
+</div>
+</div>
